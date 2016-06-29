@@ -18,7 +18,7 @@ public class RestRoute extends RouteBuilder {
         restConfiguration().component("jetty")
                 .port(restPort);
 
-        from("rest:post:/rest//postMessageToInputQueue")
+        from("rest:post:/rest/postMessageToInputQueue")
                 .inOnly("rabbitmq://{{rabbitmq.host}}:5672/inputQueue?queue=inputQueue");
     }
 }
